@@ -1,23 +1,16 @@
 import React, {useEffect, useRef} from 'react'
-import {Map } from 'immutable'
-import { useSelector, connect, useStore } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { RootState } from '../../reducers'
-import { bindActionCreators } from 'redux'
 import {generateIcon} from '../../icons'
 import useWindowScrollBottom from '../../utils/useWindowScrollBottom'
 
 import {Item} from './components/item'
-import * as agentActions from '../../actions/agent-actions'
 
 import './style.scss'
 const LoadingSvg = generateIcon('loading')
 
 let init = false
-let eventBind = false
-
 const Agent = (props) => {
-    let pager = props.pagination.toJS()
+    let pager = props.pagination
     const pagerRef = useRef(null)
     pagerRef.current = pager
     const tableListLoadingRef = useRef(0)
@@ -89,7 +82,7 @@ const Agent = (props) => {
         <div className="agent-ul" id="agent-ul">
             {props.table_list.map(item =><Item 
                 data={item} 
-                key={'agi_' + item.get('id')}
+                key={'agi_' + item.id}
                 agentActions={props.agentActions}
                 />)
             }

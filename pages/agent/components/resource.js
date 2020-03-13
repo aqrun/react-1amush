@@ -1,6 +1,5 @@
-import React, {useState, MouseEvent} from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
-import {Map} from 'immutable'
 import { generateIcon } from '../../../icons'
 import ResourceModal from './resource-modal'
 import './resource.scss'
@@ -34,9 +33,9 @@ export const Resources = (props) => {
 
     function generateItem(item){
         return (
-            <li className="rli" key={'rsitem_' + item.get('id')}>
-                <span className="tx">{item.get('name')}</span>
-                <span className="btn_remove" onClick={()=>deleteResource(item.get('id'))}>
+            <li className="rli" key={'rsitem_' + item.id}>
+                <span className="tx">{item.name}</span>
+                <span className="btn_remove" onClick={()=>deleteResource(item.id)}>
                     <span className="iconw trush">
                         <TrushSvg/>
                     </span>

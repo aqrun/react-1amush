@@ -1,8 +1,6 @@
 import React, {useState, ChangeEvent} from 'react'
 import { generateIcon } from '../../../icons'
-import { prependOnceListener } from 'cluster'
 import PropTypes from 'prop-types'
-import { Resources } from './resources'
 import './resource-modal.scss'
 
 let PlusSvg = generateIcon('plus')

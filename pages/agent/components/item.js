@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Map} from 'immutable'
 import { generateIcon } from '../../../icons'
 import { Resources } from './resource'
 import images from '../../../images'
@@ -25,12 +24,12 @@ export const Item = (props) => {
         </button>)
     }
     let img = '';
-    if(images.hasOwnProperty(data.get('icon'))){
+    if(images.hasOwnProperty(data.icon)){
         // @ts-ignore
-        img = images[data.get('icon')]
+        img = images[data.icon]
     }
     return (
-        <div className={`li i${data.get('id')}`}>
+        <div className={`li i${data.id}`}>
             <div className="in clearfix">
                 <div className="system">
                     <div className="imgw">
@@ -43,31 +42,31 @@ export const Item = (props) => {
                             <span className="iconw computer">
                                 <ComputerSvg />
                             </span>
-                            <a href="" className="tx">{data.get('name')}</a>
+                            <a href="" className="tx">{data.name}</a>
                         </li>
                         <li className="statusw">
-                            <div className={'status ' + data.get('status')}>
-                                {data.get('status')}
+                            <div className={'status ' + data.status}>
+                                {data.status}
                             </div>
                         </li>
                         <li className="ip">
                             <span className="iconw note">
                                 <NoteSvg/>
                             </span>
-                            <span className="tx">{data.get('ip')}</span>
+                            <span className="tx">{data.ip}</span>
                         </li>
                         <li className="folder">
                             <span className="iconw foler">
                                 <FolderSvg />
                             </span>
-                            <span className="tx">{data.get('folder')}</span>
+                            <span className="tx">{data.folder}</span>
                         </li>
                     </ul>
                     <div className="control-w clearfix">
                         <Resources 
-                            agentId={data.get('id')}
+                            agentId={data.id}
                             agentActions={props.agentActions}
-                            data={data.get('resources')} 
+                            data={data.resources} 
                             />
                         {deny}
                     </div>

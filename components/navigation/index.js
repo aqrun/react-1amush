@@ -11,12 +11,12 @@ import './style.scss'
 export default function Navigation(props)
 {
     function generateItem(item){
-        const Icon = generateIcon(item.get('icon'))
+        const Icon = generateIcon(item.icon)
         return(
-        <li key={'m_' + item.get('id')}>
-            <Link to={item.get('url')} key={item.get('id')}>
+        <li key={'m_' + item.id}>
+            <Link to={item.url} key={item.id}>
                 <span className="faw"><Icon /></span>
-                <span className="tx">{item.get('name')}</span>
+                <span className="tx">{item.name}</span>
             </Link>
         </li>
         )

@@ -1,0 +1,29 @@
+.navigation{
+    margin-top:20px;
+    a{
+        display: block;
+        height:50px;
+        line-height:50px;
+        font-size:14px;
+        color:white;
+        padding-left:30px;
+        &:hover,&.active{
+            background:#435466;
+            color:#1790a9;
+            //.fa{
+            //    color:#1790a9;
+            //}
+        }
+    }
+    .faw{
+        display: inline-block;
+        font-size:22px;
+        position:relative;
+        height:22px;
+        bottom: -4px;
+    }
+    .tx{
+        display: inline-block;
+        margin-left:18px;
+    }
+}
